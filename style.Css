@@ -1,0 +1,74 @@
+:root {
+    --primary-bg: #f5f6fa;
+    --secondary-dark: #2c3e50;
+    --accent: #6c5ce7;
+    --text: #333;
+}
+
+.dark-theme {
+    --primary-bg: #1e272e;
+    --secondary-dark: #ffffff;
+    --accent: #fbc531;
+    --text: #f5f6fa;
+}
+
+body {
+    background-color: var(--primary-bg);
+    color: var(--text);
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    transition: background 0.4s ease, color 0.4s ease;
+    margin: 0;
+}
+
+#hero { text-align: center; padding: 50px 20px; background: white; }
+.dark-theme #hero { background: #2f3640; }
+
+.main-container {
+    display: flex;
+    max-width: 1100px;
+    margin: 30px auto;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+#about { flex: 2; padding: 20px; background: rgba(255,255,255,0.5); border-radius: 10px; }
+
+#skills-sidebar { 
+    flex: 1; 
+    background: var(--secondary-dark); 
+    color: var(--primary-bg); 
+    padding: 20px; 
+    border-radius: 10px;
+}
+
+#skills-sidebar h2 { color: var(--accent); }
+
+/* Animation/Hover Effects (Requirement 02) */
+#skills-list li {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s;
+}
+
+#skills-list li:hover {
+    color: var(--accent);
+    padding-left: 15px;
+    cursor: pointer;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 50px;
+    background: var(--secondary-dark);
+    color: white;
+    position: sticky;
+    top: 0;
+}
+
+.nav-links { display: flex; list-style: none; gap: 20px; }
+.nav-links a { color: white; text-decoration: none; }
+
+.highlight { color: var(--accent); font-weight: bold; }
+
+@media (max-width: 768px) { .main-container { flex-direction: column; } }
